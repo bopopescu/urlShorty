@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+	<head>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>URL Shorty :: Register</title>
+
+		<link type="text/css" rel="stylesheet" href="static/css/common.css">
+        <link type="text/css" rel="stylesheet" href="static/css/responsive.css">
+        <!-- Font API !-->
+        <link href='http://fonts.googleapis.com/css?family=Patua+One|Merriweather+Sans:700italic,400' rel='stylesheet' type='text/css'>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>        
+        <script type="text/javascript" rel="js" src="static/js/register_script.js"></script>
+
+    </head>
+    
+    <body>
+        <div class="container">
+
+        <div class="header">
+            <a class="headerTitle" href="home">URL Shorty</a>
+            <span class="headerTagline">turning tall-order URLs pint-sized</span>
+        </div>
+        
+        <div class="content">
+
+            <div class="wrapper">
+
+                <div class="content-text">
+                    <span class="contentTitle">Register</span>
+                    <img src="static/img/funny-cats-narrow.png" alt="the team">
+                    <p>User names must be 6-12 characters long and contain only letters and numbers.</p>
+                    <p>Passwords must 8-16 characters long and contain only letters and numbers.</p>
+                </div>
+
+                <div class="content-form">
+                    <form id="loginForm">
+                        <div>
+                            <label for="userName">Choose User Name</label>
+                            <input type="text" name="userName" id="userName" class="form_entry">
+                        </div>
+                        <div>
+                            <label for="password">Enter Password</label>
+                            <input type="password" name="password" id="password" class="form_entry">
+                        </div>
+                        <div>
+                            <label for="password">Confirm Password</label>
+                            <input type="password" name="passwordConfirm" id="passwordConfirm" class="form_entry">
+                        </div>                        
+                        <input type="submit" value="REGISTER" class="button">
+                    </form>
+
+                    <!-- if validation error, replace content of error message and change display to show -->
+                    <div class="errorMessage">This is what an error looks like</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <span class="footerText">Brought to you by Chris, Cameron, Tiffany, &amp; Faith</span>
+        </div>
+
+        </div>
+	</body>
+
+</html>

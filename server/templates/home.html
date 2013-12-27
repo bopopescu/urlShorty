@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>URL Shorty :: Home</title>
+
+        <link type="text/css" rel="stylesheet" href="static/css/common.css">
+        <link type="text/css" rel="stylesheet" href="static/css/responsive.css">
+        <!-- Font API !-->
+        <link href='http://fonts.googleapis.com/css?family=Patua+One|Merriweather+Sans:700italic,400' rel='stylesheet' type='text/css'>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>        
+        <script type="text/javascript" rel="js" src="static/js/home_script.js"></script>
+
+    </head>
+    
+    <!-- Code for HTML UI -->
+    <body>
+        <div class="container">
+
+        <div class="header">
+            <a class="headerTitle" href="home">URL Shorty</a>
+            <div class="sessions">
+                <a class="headerUser" href="home">{{ username }}</a>
+                <a class="headerLogout" href="logout">Logout</a>
+            </div>
+        </div>
+
+        <div class="content">
+
+            <table class="userShorts">
+                <thead>
+                    <tr>
+                        <th colspan="3" class="add">
+                            <a class="addLink" href="urlShortyForm"></a>
+                            Create New Short URL
+                            <div class="errorMessage">Sorry! We are unable to delete your URL at this time.</div>
+                        </th>
+                    </tr>
+                    <tr class="userLink" id="tableHeaders">
+                        <th></th> <!-- empty header above edit & delete -->
+                        <th class="longLink">Long URL</th>
+                        <th>Short URL</th>
+                    </tr>
+
+                </thead>
+                <tbody id="userLinks">
+                    
+<!--  sample row
+                   <tr class="userLink">
+                        <td class="iconButtons"><a class="editLink" href="#"></a><a class="deleteLink" href="#"></a></td>
+                        <td class="longLink"><a href="">Link to Long URL</a></td>
+                        <td class="shortLink">Text of Short URL</td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="footer">
+            <span class="footerText">Brought to you by Chris, Cameron, Tiffany, &amp; Faith</span>
+        </div>
+
+        </div>
+    </body>
+
+</html>

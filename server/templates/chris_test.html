@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>URL Shorty</title>
+
+
+		<link type="text/css" rel="stylesheet" href="static/css/style.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>        
+        <script type="text/javascript" rel="js" src="static/js/chris_script.js"></script>
+        <!-- Font API !-->
+        <link href='http://fonts.googleapis.com/css?family=Patua+One|Merriweather+Sans:700italic,400' rel='stylesheet' type='text/css'>
+    </head>
+    
+    <!-- Code for HTML UI -->
+
+    <body class="background">        
+			<p> HTML page to show how to work with FLASK HTTP requests</p>
+			<form >				
+				<input type="text" id="user_id"> Enter User ID</input>				
+				<br>
+				<input type="text" id="shortURL"> Short URL</input>
+				<br>
+				<input type="text" id="longURL"> Long URL</input>
+				<br>
+				<button type=button id="show_all"> Show all URLs </button>
+				<button type=button id="check_shortURL"> Check Short URL? </button>			
+				<button type=button id="add_shortURL"> Add Short URL </button>			
+				<button type=button id="delete_shortURL"> Delete Short URL </button>			
+				
+			</form>
+			<div id="showAll">
+			</div>
+			<div id="showShortURL">
+			</div>
+	</body>
+
+
+</html>

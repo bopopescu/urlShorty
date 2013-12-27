@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<title>URL Shorty</title>
+
+		<link type="text/css" rel="stylesheet" href="static/css/project1-form-3.0.css">
+
+        <!-- latest jQuery !-->
+		<!--<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>!-->	
+
+        <!-- jQuery validation !-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>        
+        <script type="text/javascript" rel="js" src="static/js/js_wip_2.0.js"></script>
+
+        <!-- Font API !-->
+        <link href='http://fonts.googleapis.com/css?family=Patua+One|Merriweather+Sans:700italic,400' rel='stylesheet' type='text/css'>
+    </head>
+    
+    
+    <body class="background">        
+			<div id="top_bar">
+ 				<h3>Brought to you by Chris, Cameron, Tiffany, &amp; Faith.</h3>
+            </div>
+            <!-- !-->
+ 
+ 
+            <div id="container">
+            	<br>
+            	<div id="header">
+				<br>
+				<h1>URL Shorty</h1>
+                <h2>turning tall-order URLs pint-sized.
+                <img src="static/img/funny-cats.png" alt="the team">
+
+                </h2>
+                </div>
+              <div id="instructions">
+                <ul>
+                <li>Enter the full URL in the first field.</li>
+                <li>Next, enter your desired abbreviated URL in the second field.<br>
+                &mdash;OR&mdash;
+                Click "RANDOM" below and we'll make one for you.</li>
+                <li>Finally, click "GO" and voila&mdash;
+                your new URL will be fully functional!</li>
+                </ul>
+                </div> 
+                <!-- instructions !-->
+
+                <form id="shorty-form" onSubmit="validate()">
+                <label style="font-size: 12px; margin-bottom: 5px;">Original URL:</label><br>
+                    <input type="text" id="ORIGINAL_URL" class="form_entry">
+                 
+                 <br>
+                 <br> 
+                <label style="font-size: 12px; margin-bottom: 5px;">New URL:</label><br>
+                    <input type="text" id="NEW_URL" class="form_entry">
+                 <br>
+                 <br>
+                 <br>
+                 <input type="submit" value="RANDOM" id="RANDOM"  class="button"/>
+                 <input type="submit" value="GO" id="GO"  class="button"/>
+                </form> 
+                <!-- end form-inputs !-->
+                
+                <div id="generated">
+
+                
+				<span id ="NEW_URL_ENTRY"></span></span>
+                <img src="static/img/blue_bg.png" alt="blue">
+
+                </div>
+                <!-- instructions !-->
+            </div>
+	</body><!-- body div !-->
+
+</html>

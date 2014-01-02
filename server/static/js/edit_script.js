@@ -131,7 +131,7 @@ $(document).ready(function() {
 		else {//if inputs are valid, send ajax call to server to edit URL pair
 			
 			$.ajax({
-				url: '../server/updateShort',
+				url: '../updateShort',
 				type: 'POST',
 				dataType: 'json',
 				data: {oldShort: oldShort, newShort: shortUrlVal, newLong: longUrlValue},
@@ -215,7 +215,7 @@ function showTwitterError() {
 
 function checkURL(short){
 	$.ajax({
-		url: '../server/lookupShortURL',
+		url: '../lookupShortURL',
 		type: 'GET',
 		dataType: 'json',
 		data: {shortURL: short},

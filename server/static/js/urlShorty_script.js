@@ -128,7 +128,7 @@ $(document).ready(function() {
 		}
 		else {//if inputs are valid, send ajax call to server to add values to the database
 			$.ajax({
-				url: '../server/addShort',
+				url: '../addShort',
 				type: 'POST',
 				dataType: 'json',
 				data: {longURL: oldUrlValue, shortURL: newUrlVal},
@@ -219,7 +219,7 @@ function showTwitterError() {
 
 function checkURL(short){
 	$.ajax({
-		url: '../server/lookupShortURL',
+		url: '../lookupShortURL',
 		type: 'GET',
 		dataType: 'json',
 		data: {shortURL: short},

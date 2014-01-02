@@ -76,7 +76,7 @@ $(document).ready(function() {
 **/
 function getAllfromFlask(userName){
 	return $.ajax({
-		url: '../server/getAll',
+		url: '../getAll',
 		type: 'get',
 		data: {user_name: userName}, 
 		dataType: 'json',

@@ -31,7 +31,7 @@ $(document).ready(function() {
 		}
 		else{//if everything is valid, send post request to server to register the user and log them in
 			$.ajax({
-				url: '../server/registerConfirm',
+				url: '../registerConfirm',
 				type: 'POST',
 				dataType: 'json',
 				data: {user_name: username, password: password},

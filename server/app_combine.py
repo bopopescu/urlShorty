@@ -7,6 +7,7 @@ from pprint import pprint
 from subprocess import check_output
 import flask
 from flask import request, abort, jsonify, session
+import os
 from os import environ
 from sqlite3 import dbapi2 as sqlite3
 from functools import wraps
@@ -96,11 +97,18 @@ def edit():
         shortURL = shortURL,
         longURL = longURL)
 
+## chris tester
+@app.route('/chris', methods = ['GET'])
+def chris():
+    return flask.render_template('chris_test.html')
+		
 ## Twitter tester
 @app.route('/twitter', methods = ['GET'])
 def twitter():
     return flask.render_template(
         'twittertutorial.html')		
+		
+		
 ##Route to the template to generate new short URLS		
 @app.route('/urlShortyForm', methods = ['GET'])
 @login_required
@@ -116,6 +124,7 @@ def urlShortyForm():
 def getAll():   
     #needs to take in session object eventually
     user_name = session['username']
+    # user_name = 'userID1'
     return jsonify(answer = getAllQuery(user_name))
 	
 # addURLQuery:
@@ -225,7 +234,10 @@ def page_not_found(error):
 		
 if __name__ == "__main__":
     #runs on specified port
-    app.run(port=int(environ['FLASK_PORT']))
+    # app.run(port=int(environ['FLASK_PORT']))
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port) 
+    
 
 ######################################################################################3	
 

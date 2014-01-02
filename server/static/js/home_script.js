@@ -4,7 +4,7 @@ $(document).ready(function() {
 	$('#tableHeaders').hide();
 	//get user's URLs to display in a table
 	$.ajax({
-		url: '../server/getAll',
+		url: '../getAll',
 		type: 'get',
 		//this needs to be taken out after testing
 		dataType: 'json',
@@ -35,7 +35,7 @@ $(document).ready(function() {
 		var short_url = $(this).parent().next().next().text();
 		//post request to URL to delete the short url from the database
 		$.ajax({
-			url: '../server/deleteShort',
+			url: '../deleteShort',
 			type: 'post',
 			data: {shortURL: short_url},
 			dataType: 'json',

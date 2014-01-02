@@ -1,14 +1,16 @@
 import json 
 import random
-import MySQLdb, _mysql
-import bcrypt
+#import MySQLdb, _mysql
+import mysql.connector
+# import bcrypt
 
 
 
 ## Ideally the access rights to the files will be controlled by the webserver prevening outside intrusion 
 """Connects to the specific database."""
 def connect_db():   
-	conn = MySQLdb.connect(host="localhost", user="urlShortyDb", passwd="metacrap",db="urlShortyDb")
+	# conn = MySQLdb.connect(host="localhost", user="urlShortyDb", passwd="metacrap",db="urlShortyDb")
+	conn = mysql.connector.connect(user='b0a75d478aaa2e', password='ac801d79', host='us-cdbr-azure-west-b.cleardb.com', database='urlShortyDb')
     #conn.row_factory = dict_factory
 	return conn
 
@@ -41,8 +43,9 @@ def addUser(user_name_input, password_input):
 		db.rollback()
 		result = "User already exist"	
 	else:
-		hashed = bcrypt.hashpw(password_input, bcrypt.gensalt())
-		username_password = (user_name_input, hashed)
+		# hashed = bcrypt.hashpw(password_input, bcrypt.gensalt())
+		# username_password = (user_name_input, hashed)
+		username_password = (user_name_input, password_input)		
 		# query_text = "insert into testing_login (user_name, password) values ('%s','%s')" % username_password
 		query_text = "insert into testing_login (user_name, password) values (%s,%s)" 
 		try:
@@ -56,7 +59,7 @@ def addUser(user_name_input, password_input):
 	return result
 
 # Checks if user exists and if password is valid run in __loginConfirm()__  in app.py 
-def passwordValidate(user_name_input, password_input):
+def passwordValidate1(user_name_input, password_input):
 	#check to see if the user exists
 	check_user = userValidate(user_name_input)
 	result = ''
@@ -81,6 +84,32 @@ def passwordValidate(user_name_input, password_input):
 		result = "Error"
 	return result
 
+def passwordValidate(user_name_input, password_input):
+	#check to see if the user exists
+	check_user = userValidate(user_name_input)
+	result = ''
+	if check_user == False:
+		result = "User doesn't exist"	
+	elif check_user == True:
+		db = connect_db()
+		cur = db.cursor()
+		# password_query_text = "select password from testing_login where user_name ='%s'" % user_name_input
+		password_query_text = "select password from testing_login where user_name =%s" 
+		cur.execute(password_query_text, (user_name_input,))
+		
+		#passwordDb = cur.fetchone()[0]
+		#print passwordDb
+		hashed = cur.fetchone()[0]
+		if password_input == hashed:
+			result = "It matches"
+		else:
+			result = "It does not match"
+		db.close()
+	else:
+		result = "Error"
+	return result	
+	
+	
 # Transforms 'links' table data into JSON
 def returnJSON(result):
 	json_list = []
@@ -209,8 +238,8 @@ def main():
 	# print getAllQuery("christest")
 	
 	#print addUser('USER004', 'gobears')
-	# print addUser('USER007', 'zebracake')
-	# print passwordValidate('USER007', 'zebracake')
+	print addUser('USER007', 'zebracake')
+	print passwordValidate('USER007', 'zebracake')
 	# print passwordValidate('USER008', 'zebracake')
 	
 	
@@ -220,7 +249,7 @@ def main():
 	# print userValidate('USER00w7')
 	# print addShortURLQuery('food', 'http://food.com', 'fanman')
 	# print deleteURLQuery('christest')
-	print lookupShortURLQuery('news')
+	# print lookupShortURLQuery('news')
 	# print passwordValidate('christest2', 'metacrap1234adsf')
 	# print addUser('USER004', 'gobears')
 	

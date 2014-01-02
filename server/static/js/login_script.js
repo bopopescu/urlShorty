@@ -14,7 +14,7 @@ $(document).ready(function() {
 		}	
 		else{//send post request to server to log the user in
 			$.ajax({
-				url: '../server/loginConfirm',
+				url: '../loginConfirm',
 				type: 'POST',
 				dataType: 'json',
 				data: {user_name: username, password: password},

@@ -2,6 +2,7 @@ import json
 import random
 #import MySQLdb, _mysql
 import mysql.connector
+# from db_variables import *
 # import bcrypt
 
 
@@ -233,23 +234,24 @@ def deleteURLQuery(shortURL_input):
 	
 
 def main():
-	#addShortURLQuery1('user_name5', 'short_url5w', 'long_url5')
+	# addShortURLQuery('user_name5', 'short_url5w', 'long_url5')
 	#print showAll()
 	# print getAllQuery("christest")
 	
 	#print addUser('USER004', 'gobears')
-	print addUser('USER007', 'zebracake')
-	print passwordValidate('USER007', 'zebracake')
+	# print addUser('USER007', 'zebracake')
+	# print passwordValidate('USER007', 'zebracake')
 	# print passwordValidate('USER008', 'zebracake')
-	
+
 	
 	# print editURLQuery('shorturltestA', 'shorturltestA', 'thisshouldchange', 'christest2')
 	
 	#### Checking SQL escaping	
-	# print userValidate('USER00w7')
-	# print addShortURLQuery('food', 'http://food.com', 'fanman')
+	print userValidate('USER00w7')
+	print addShortURLQuery('food', 'http://food.com', 'fanman')
+	print lookupShortURLQuery('food')
 	# print deleteURLQuery('christest')
-	# print lookupShortURLQuery('news')
+	print lookupShortURLQuery('news')
 	# print passwordValidate('christest2', 'metacrap1234adsf')
 	# print addUser('USER004', 'gobears')
 	

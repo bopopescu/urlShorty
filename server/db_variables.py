@@ -1,0 +1,1 @@
+SNAP_DB_MYSQL_USER = 'b0a75d478aaa2e'
